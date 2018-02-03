@@ -16,8 +16,11 @@ Please contact me if you have specific requests or needs related to my work.
 1.  Extract resources as normal, putting the files in their relevent folders (models in models, sounds in sounds, etc)
 
 2.  Merge my main.txt script changes with your Main.txt
+
+
     This is simple, just copy and paste into your file. This is important as it loads my scripts into the main game loop.
-      `#include "scripts/objectivemarker.txt"`
+    
+    `#include "scripts/objectivemarker.txt"`
 
 3.  Open the level editor and open up a level. 
      Place Objective Markers wherever you want. They are listed as Entities Under "objective".
