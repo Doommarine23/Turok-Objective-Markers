@@ -1,0 +1,16 @@
+// model 0663, node 00, variant 00, section 00
+material Texture {
+    shader "progs/world"
+    blend
+    alphatest
+    alphafunc gequal
+    alphamask 0.6525
+    sort masked
+    depthtest
+    color_diffuse "1.000000 1.000000 1.000000 1.000000"
+
+    sampler "diffuse" 0 "textures/tex_TOBJ.png" {
+        filter      linear
+        wrap        clamp
+    }
+}

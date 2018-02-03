@@ -1,0 +1,8 @@
+Trap 53511
+{
+    classname               "kexActor"
+    scriptClass             "TurokObjectiveMarker"
+    flags.noMovement        1
+    defaultEditorModel      "models/dyn_objective_marker.bin"
+    defaultEditorAnim       "anims/dyn_mantis_statue01_anim.bin"
+}

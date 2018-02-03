@@ -1,0 +1,102 @@
+/* 
+Created by Doommarine23 2017
+Based off existing code by Samuel Villarrel Copyright(C) 2014-2015
+
+DESCRIPTION: Objective Marker similar that can be hidden or disabled.
+
+*/
+
+
+//
+// Copyright(C) 2014-2015 Samuel Villarreal
+//
+// This program is free software; you can redistribute it and/or
+// modify it under the terms of the GNU General Public License
+// as published by the Free Software Foundation; either version 2
+// of the License, or (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// DESCRIPTION:
+//      Animal Script Object Classes
+//
+
+#include "scripts/animations.txt"
+
+class TurokObjectiveMarker : ScriptObject
+{
+    kActor @self;
+    float turnOffset;
+    TurokObjectiveMarker(kActor @actor)
+    {
+        @self = actor;
+    }
+    
+    ~TurokObjectiveMarker()
+    {
+    }
+    
+    /*
+    ==============================================================
+    OnTick
+    ==============================================================
+    */
+    
+    void OnTick(void)
+    {
+    }
+    
+    /*
+    ==============================================================
+    OnDamage
+    ==============================================================
+    */
+    
+    void OnDamage(kActor @instigator, kDictMem @damageDef, const int damage)
+    {
+    }
+    
+    /*
+    ==============================================================
+    OnDeath
+    ==============================================================
+    */
+    
+    void OnDeath(kActor @killer, kDictMem @damageDef)
+    {
+        self.Remove();
+    }
+    
+    /*
+    ==============================================================
+    OnSpawn
+    ==============================================================
+    */
+    
+    void OnSpawn(void)
+    {
+    }
+    void OnHide(void)
+    {
+       self.RenderModel().SetVisibility(0, false);
+       self.RenderModel().SetVisibility(1, false);
+    }
+    void OnShow(void)
+    {
+       self.RenderModel().SetVisibility(0, true);
+       self.RenderModel().SetVisibility(1, true);
+    }
+    /*
+    ==============================================================
+    OnRestore
+    ==============================================================
+    */
+    
+    void OnRestore(void)
+    {
+        self.Remove();
+    }
+};
